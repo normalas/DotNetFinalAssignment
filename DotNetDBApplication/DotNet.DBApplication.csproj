@@ -136,6 +136,11 @@
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Behaviors\NavigationViewHeaderBehavior.cs" />
     <Compile Include="Behaviors\NavigationViewHeaderMode.cs" />
+    <Compile Include="DataAccess\Actors.cs" />
+    <Compile Include="DataAccess\Characters.cs" />
+    <Compile Include="DataAccess\Developers.cs" />
+    <Compile Include="DataAccess\Games.cs" />
+    <Compile Include="DataAccess\Publishers.cs" />
     <Compile Include="Helpers\NavHelper.cs" />
     <Compile Include="Helpers\Observable.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
@@ -162,8 +167,8 @@
     <Compile Include="Views\ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewEntryPage.xaml.cs">
-      <DependentUpon>ViewEntryPage.xaml</DependentUpon>
+    <Compile Include="Views\ViewContentPage.xaml.cs">
+      <DependentUpon>ViewContentPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -213,7 +218,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\ViewEntryPage.xaml">
+    <Page Include="Views\ViewContentPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

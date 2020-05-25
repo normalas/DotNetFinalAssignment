@@ -15,11 +15,7 @@
         VerticalScrollMode="Enabled">
         <StackPanel HorizontalAlignment="Left">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <FontIcon
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    FontSize="48"
-                    Glyph="{x:Bind MasterMenuItem.Symbol, Mode=OneWay}" />
+                
                 <TextBlock
                     Margin="{StaticResource SmallLeftMargin}"
                     VerticalAlignment="Center"

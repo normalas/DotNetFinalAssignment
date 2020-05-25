@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 using DotNet.DBApplication.Core.Models;
 using DotNet.DBApplication.Core.Services;
-using DotNet.DBApplication.Helpers;
+using DotNetDBApplication.Helpers;
 
 using Microsoft.Toolkit.Uwp.UI.Controls;
 

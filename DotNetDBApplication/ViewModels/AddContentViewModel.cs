@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DotNet.DBApplication.Helpers;
+using DotNetDBApplication.Helpers;
 
 namespace DotNet.DBApplication.ViewModels
 {

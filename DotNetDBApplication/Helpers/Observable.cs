@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace DotNet.DBApplication.Helpers
+namespace DotNetDBApplication.Helpers
 {
     public class Observable : INotifyPropertyChanged
     {

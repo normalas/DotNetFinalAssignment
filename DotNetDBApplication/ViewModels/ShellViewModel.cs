@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-using DotNet.DBApplication.Helpers;
+using DotNetDBApplication.Helpers;
 using DotNet.DBApplication.Services;
 
 using Windows.System;

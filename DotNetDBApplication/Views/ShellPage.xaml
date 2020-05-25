@@ -36,7 +36,7 @@
             <winui:NavigationViewItem x:Uid="Shell_Main" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
             <winui:NavigationViewItem x:Uid="Shell_MasterDetail" Icon="Document" helpers:NavHelper.NavigateTo="views:MasterDetailPage" />
             <winui:NavigationViewItem x:Uid="Shell_AddContent" Icon="Document" helpers:NavHelper.NavigateTo="views:AddContentPage" />
-            <winui:NavigationViewItem x:Uid="Shell_ViewEntry" Icon="Document" helpers:NavHelper.NavigateTo="views:ViewEntryPage" />
+            <winui:NavigationViewItem x:Uid="Shell_ViewEntry" Icon="Document" helpers:NavHelper.NavigateTo="views:ViewContentPage" />
         </winui:NavigationView.MenuItems>
         <i:Interaction.Behaviors>
             <behaviors:NavigationViewHeaderBehavior

@@ -1,14 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace DotNet.Models
 {
-    public class VideoGame : Game
+    public class VideoGame
     {
-        public VideoGame(string GameTitle) : base(GameTitle) { }
-        public ICollection<Character> Cast { get; set; }
+        [Key]
+        public int GameId { get; set; }
+        public Game Game { get; set; }
 
-        public DateTime ReleaseDate { get; set; }
+        [Key]
+        public int DeveloperId { get; set; }
+        public Developer Developer { get; set; }
 
+        [Key]
+        public int PublisherId { get; set; }
+        public Publisher Publisher { get; set; }
+
+        [Key]
+        public int CharacterId { get; set; }
+        public Character Character { get; set; }
+
+        [Key]
+        public int ActorId { get; set; }
+        public Actor Actor { get; set; }
     }
 }

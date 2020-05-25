@@ -4,7 +4,7 @@ using Microsoft.UI.Xaml.Controls;
 
 using Windows.UI.Xaml;
 
-namespace DotNet.DBApplication.Helpers
+namespace DotNetDBApplication.Helpers
 {
     public class NavHelper
     {

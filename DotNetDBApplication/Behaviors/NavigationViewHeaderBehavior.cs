@@ -8,7 +8,7 @@ using Windows.UI.Xaml.Navigation;
 
 using WinUI = Microsoft.UI.Xaml.Controls;
 
-namespace DotNet.DBApplication.Behaviors
+namespace DotNetDBApplication.Behaviors
 {
     public class NavigationViewHeaderBehavior : Behavior<WinUI.NavigationView>
     {

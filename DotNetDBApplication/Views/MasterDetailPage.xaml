@@ -6,11 +6,11 @@
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
-    xmlns:model="using:DotNetDBApplication.Core.Models"
+    xmlns:model="using:DotNet.DBApplication.Core.Models"
     xmlns:views="using:DotNetDBApplication.Views"
     xmlns:behaviors="using:DotNetDBApplication.Behaviors"
     behaviors:NavigationViewHeaderBehavior.HeaderMode="Never"
-    mc:Ignorable="d">
+    mc:Ignorable="d" d:DesignWidth="2076.491" d:DesignHeight="1312.421">
     <Page.Transitions>
         <TransitionCollection>
             <NavigationThemeTransition />

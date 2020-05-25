@@ -1,4 +1,4 @@
-﻿namespace DotNet.DBApplication.Behaviors
+﻿namespace DotNetDBApplication.Behaviors
 {
     public enum NavigationViewHeaderMode
     {

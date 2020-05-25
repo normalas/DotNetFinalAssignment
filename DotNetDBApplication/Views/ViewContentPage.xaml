@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="DotNetDBApplication.Views.ViewContentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <ScrollViewer
+        Name="ForegroundElement"
+        Padding="{StaticResource DetailPageMargin}"
+        HorizontalAlignment="Stretch"
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+        VerticalScrollMode="Enabled">
+        <StackPanel HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+
+                <TextBlock
+                    Margin="{StaticResource SmallLeftMargin}"
+                    VerticalAlignment="Center"
+                    Text="{x:Bind  Mode=OneWay}"
+                    Style="{ThemeResource TitleTextBlockStyle}" />
+            </StackPanel>
+            <StackPanel Name="block" Padding="0,15,0,0">
+                <TextBlock Style="{StaticResource DetailSubTitleStyle}" Text="Title" />
+                <TextBox Text="{x:Bind Mode=OneWay}" />
+                <!-- CHANGE -->
+
+                <TextBlock Style="{StaticResource DetailSubTitleStyle}" Text="Subtitle" />
+                <TextBox Text="{x:Bind  Mode=OneWay}" />
+                <!-- CHANGE -->
+                
+
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Developer" />
+                <TextBox Text="{x:Bind  Mode=OneWay}" />
+                <!-- CHANGE -->
+
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Publisher" />
+                <TextBox Text="{x:Bind  Mode=OneWay}" />
+                <!-- CHANGE -->
+
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Estimated Time To Complete" />
+                <TextBox Text="{x:Bind  Mode=OneWay}" />
+                <!-- CHANGE -->
+
+                <TextBlock
+                    Margin="{StaticResource MediumTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Note 1" />
+                <TextBox Text="" />
+                <!-- CHANGE -->
+
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    MinWidth="650"
+                    Text="Note 2" />
+                <TextBox
+                    Margin="{StaticResource MediumBottomMargin}"
+                    MinWidth="650"
+                    Text=""/>
+                <!-- CHANGE -->
+
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

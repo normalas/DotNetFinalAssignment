@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DotNetDBApplication.ViewModels;
+using DotNet.DBApplication.ViewModels;
 
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;

@@ -6,11 +6,11 @@ using Windows.UI.Xaml.Controls;
 
 namespace DotNetDBApplication.Views
 {
-    public sealed partial class MainPage : Page
+    public sealed partial class ViewContentPage : Page
     {
-        public MainViewModel ViewModel { get; } = new MainViewModel();
+        public ViewContentViewModel ViewModel { get; } = new ViewContentViewModel();
 
-        public MainPage()
+        public ViewContentPage()
         {
             InitializeComponent();
         }

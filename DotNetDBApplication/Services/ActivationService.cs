@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using DotNet.DBApplication.Activation;
-
+using DotNetDBApplication;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;

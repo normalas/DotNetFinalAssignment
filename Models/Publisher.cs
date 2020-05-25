@@ -4,8 +4,10 @@ namespace DotNet.Models
 {
     public class Publisher : Company
     {
+        public Publisher() : base() { }
         public Publisher(string CompanyName) : base(CompanyName) { }
 
-        public ICollection<Game> PublishedGames { get; set; }
+        public int PublisherId { get; set; }
+        public ICollection<VideoGame> PublishedGames { get; } = new List<VideoGame>();
     }
 }

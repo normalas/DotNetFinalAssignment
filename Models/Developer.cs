@@ -4,8 +4,11 @@ namespace DotNet.Models
 {
     public class Developer : Company
     {
+        public Developer() : base() { }
         public Developer(string CompanyName) : base(CompanyName) { }
 
-        public ICollection<Game> DevelopedGames { get; set; }
+        public int DeveloperId { get; set; }
+
+        public ICollection<VideoGame> DevelopedGames { get; } = new List<VideoGame>();
     }
 }

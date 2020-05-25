@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DotNetDBApplication.Services;
+using DotNet.DBApplication.Services;
 
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
