@@ -71,6 +71,7 @@
                 <!-- CHANGE -->
 
             </StackPanel>
+            <Button Content="Confirm"/>
         </StackPanel>
     </ScrollViewer>
 </Page>

@@ -7,12 +7,73 @@
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--
-                The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.
-            -->
-        </Grid>
+        <ScrollViewer
+        Name="ForegroundElement"
+        Padding="{StaticResource DetailPageMargin}"
+        HorizontalAlignment="Stretch"
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+        VerticalScrollMode="Enabled">
+            <StackPanel HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+
+                    <TextBlock
+                    Margin="{StaticResource SmallLeftMargin}"
+                    VerticalAlignment="Center"
+                    Text="Add a Video Game"
+                    Style="{ThemeResource TitleTextBlockStyle}" />
+                </StackPanel>
+                <StackPanel Name="block" Padding="0,15,0,0">
+                    <TextBlock Style="{StaticResource DetailSubTitleStyle}" Text="Title" />
+                    <TextBox x:Name="titleBox" Text="{x:Bind  Mode=OneWay}"/>
+                    <!-- CHANGE -->
+
+                    <TextBlock Style="{StaticResource DetailSubTitleStyle}" Text="Subtitle" />
+                    <TextBox x:Name="subtitleBox" Text="{x:Bind  Mode=OneWay}"/>
+                    <!-- CHANGE -->
+
+
+                    <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Developer" />
+                    <TextBox x:Name="developerBox" Text="{x:Bind  Mode=OneWay}" />
+                    <!-- CHANGE -->
+
+                    <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Publisher" />
+                    <TextBox x:Name="publisherBox" />
+                    <!-- CHANGE -->
+
+                    <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Estimated Time To Complete" />
+                    <TextBox x:Name="ttcBox" Text="{x:Bind  Mode=OneWay}" />
+                    <!-- CHANGE -->
+
+                    <TextBlock
+                    Margin="{StaticResource MediumTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Character" />
+                    <TextBox x:Name="characterBox" Text="{x:Bind  Mode=OneWay}"/>
+                    <!-- CHANGE -->
+
+                    <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    MinWidth="650"
+                    Text="Note 2" />
+                    <TextBox
+                    Margin="{StaticResource MediumBottomMargin}"
+                    MinWidth="650"
+                    x:Name="actorBox" Text="{x:Bind  Mode=OneWay}"/>
+                    <!-- CHANGE -->
+
+                </StackPanel>
+                <Button Content="Confirm" x:Name="confirmButton" Click="confirmButton_Click"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

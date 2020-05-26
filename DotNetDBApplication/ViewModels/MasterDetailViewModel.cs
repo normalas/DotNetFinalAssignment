@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 using DotNet.DBApplication.Core.Models;
 using DotNet.DBApplication.Core.Services;
+using DotNet.Models;
 using DotNetDBApplication.Helpers;
 
 using Microsoft.Toolkit.Uwp.UI.Controls;
@@ -22,6 +23,7 @@ namespace DotNet.DBApplication.ViewModels
         }
 
         public ObservableCollection<SampleOrder> SampleItems { get; private set; } = new ObservableCollection<SampleOrder>();
+        public ObservableCollection<VideoGame> VideoGames { get; private set; } = new ObservableCollection<VideoGame>();
 
         public MasterDetailViewModel()
         {
@@ -42,6 +44,7 @@ namespace DotNet.DBApplication.ViewModels
             {
                 Selected = SampleItems.First();
             }
+
         }
     }
 }

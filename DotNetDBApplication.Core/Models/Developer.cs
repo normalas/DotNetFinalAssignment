@@ -2,13 +2,15 @@
 
 namespace DotNet.Models
 {
-    public class Developer : Company
+    public class Developer
     {
-        public Developer() : base() { }
-        public Developer(string CompanyName) : base(CompanyName) { }
-
+        public Developer() { }
+        public Developer(string DeveloperName)
+        {
+            this.DeveloperName = DeveloperName;
+        }
         public int DeveloperId { get; set; }
-
+        public string DeveloperName { get; set; }
         public ICollection<VideoGame> DevelopedGames { get; } = new List<VideoGame>();
     }
 }

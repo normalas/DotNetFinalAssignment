@@ -21,9 +21,5 @@ namespace DotNet.Models
         [Key]
         public int CharacterId { get; set; }
         public Character Character { get; set; }
-
-        [Key]
-        public int ActorId { get; set; }
-        public Actor Actor { get; set; }
     }
 }

@@ -7,16 +7,12 @@ namespace DotNet.Models
 {
     public class Game
     {
+        public Game() { }
         public Game(string GameTitle)
         {
             this.GameTitle = GameTitle;
         }
-        public Game(string GameTitle, Publisher Publisher, Developer Developer)
-        {
-            this.GameTitle = GameTitle;
-            this.Publisher = Publisher;
-            this.Developer = Developer;
-        } 
+
         [Required]
         public int GameId { get; set; }
 
@@ -26,17 +22,10 @@ namespace DotNet.Models
 
         public string GameSeries { get; set; }
 
-        public string BoxArtImage { get; set; }
+        public ICollection<Character> CharacterCast { get; } = new List<Character>();
 
-        [ForeignKey("DeveloperId")]
-        public Developer Developer { get; set; }
-
-        [ForeignKey("PublisherId")]
-        public Publisher Publisher { get; set; }
-        public ICollection<Character> Cast { get; } = new List<Character>();
-
-        //Estimated Time To Completion, aka how long it is estimated to complete a full, regular playthrough
-        public float EstimatedTtc { get; set; }
+        //Estimated hours to completion, aka how long it is estimated to complete a full, regular playthrough in hours
+        public float HoursToComplete { get; set; }
 
         public override string ToString()
         {

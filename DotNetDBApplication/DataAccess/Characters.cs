@@ -1,8 +1,6 @@
 ﻿using DotNet.Models;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +10,7 @@ namespace DotNetDBApplication.DataAccess
     public class Characters
     {
         readonly HttpClient _httpClient = new HttpClient();
-        static readonly Uri charactersBaseUri = new Uri("http://localhost:6289/api/characters");
+        static readonly Uri charactersBaseUri = new Uri("http://localhost:53848/api/characters");
 
         public async Task<Character[]> GetCharactersAsync()
         {
