@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using DotNet.Models;
+﻿using DotNet.Models;
+using Microsoft.EntityFrameworkCore;
+
 using System.Data.SqlClient;
 
 namespace DotNet.DataAccess
