@@ -27,7 +27,7 @@
                     Grid.Column="1"
                     Margin="{StaticResource SmallLeftMargin}"
                     VerticalAlignment="Center">
-                    <TextBlock Style="{ThemeResource ListTitleStyle}" Text="{x:Bind Game.GameTitle}" />
+                    <TextBlock Style="{ThemeResource ListTitleStyle}" Text="{x:Bind Game}" />
                     <TextBlock Style="{StaticResource ListSubTitleStyle}" Text="{x:Bind Game.GameSubtitle}" />
                 </StackPanel>
             </Grid>

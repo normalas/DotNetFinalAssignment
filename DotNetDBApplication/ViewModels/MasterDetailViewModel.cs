@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-
-using DotNet.DBApplication.Core.Models;
-using DotNet.DBApplication.Core.Services;
 using DotNet.Models;
 using DotNetDBApplication.DataAccess;
 using DotNetDBApplication.Helpers;
@@ -29,7 +25,7 @@ namespace DotNet.DBApplication.ViewModels
         public MasterDetailViewModel()
         {
         }
-
+        
         public async Task LoadDataAsync(MasterDetailsViewState viewState)
         {
             VideoGames.Clear();

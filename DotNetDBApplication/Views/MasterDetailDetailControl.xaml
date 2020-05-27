@@ -17,7 +17,7 @@
                 <TextBlock
                     Margin="{StaticResource SmallLeftMargin}"
                     VerticalAlignment="Center"
-                    Text="{x:Bind MasterMenuItem.Company, Mode=OneWay}"
+                    Text="{x:Bind VideoGameItem.GameId, Mode=OneWay}"
                     Style="{ThemeResource TitleTextBlockStyle}" />
             </StackPanel>
             <StackPanel Name="block" Padding="0,15,0,0">

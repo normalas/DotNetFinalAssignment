@@ -71,8 +71,8 @@
                 <!-- CHANGE -->
 
             </StackPanel>
-            <Button Margin="10" Content="Confirm" Name="ConfirmButton" Click="ConfirmButton_Click"/>
-            <Button Margin="10" Content="Delete" Name="DeleteButton" Click="DeleteButton_Click"/>
+            <Button Margin="10" Content="Confirm Edit" Name="ConfirmButton" Click="ConfirmButton_Click"/>
+            <Button Margin="10" Content="Delete Entry" Name="DeleteButton" Click="DeleteButton_Click"/>
         </StackPanel>
     </ScrollViewer>
 </Page>
