@@ -6,7 +6,7 @@
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
-    xmlns:model="using:DotNet.DBApplication.Core.Models"
+    xmlns:model="using:DotNet.Models"
     xmlns:views="using:DotNetDBApplication.Views"
     xmlns:behaviors="using:DotNetDBApplication.Behaviors"
     behaviors:NavigationViewHeaderBehavior.HeaderMode="Never"
@@ -17,30 +17,25 @@
         </TransitionCollection>
     </Page.Transitions>
     <Page.Resources>
-        <DataTemplate x:Key="ItemTemplate" x:DataType="model:SampleOrder">
+        <DataTemplate x:Key="ItemTemplate" x:DataType="model:VideoGame">
             <Grid Height="60">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <FontIcon
-                    Grid.Column="0"
-                    VerticalAlignment="Center"
-                    FontSize="32"
-                    Glyph="{x:Bind Symbol}" />
                 <StackPanel
                     Grid.Column="1"
                     Margin="{StaticResource SmallLeftMargin}"
                     VerticalAlignment="Center">
-                    <TextBlock Style="{ThemeResource ListTitleStyle}" Text="{x:Bind Company}" />
-                    <TextBlock Style="{StaticResource ListSubTitleStyle}" Text="{x:Bind Status}" />
+                    <TextBlock Style="{ThemeResource ListTitleStyle}" Text="{x:Bind Game.GameTitle}" />
+                    <TextBlock Style="{StaticResource ListSubTitleStyle}" Text="{x:Bind Game.GameSubtitle}" />
                 </StackPanel>
             </Grid>
         </DataTemplate>
 
         <DataTemplate x:Key="DetailsTemplate">
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-                <views:MasterDetailDetailControl MasterMenuItem="{Binding}" />
+                <views:MasterDetailDetailControl VideoGameItem="{Binding}" />
             </Grid>
         </DataTemplate>
 
@@ -97,7 +92,7 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
             BorderBrush="Transparent"
             DetailsTemplate="{StaticResource DetailsTemplate}"
-            ItemsSource="{x:Bind ViewModel.SampleItems}"
+            ItemsSource="{x:Bind ViewModel.VideoGames}"
             ItemTemplate="{StaticResource ItemTemplate}"
             MasterHeaderTemplate="{StaticResource MinimalMasterHeaderTemplate}"
             NoSelectionContentTemplate="{StaticResource NoSelectionContentTemplate}"

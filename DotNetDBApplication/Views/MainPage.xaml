@@ -14,6 +14,6 @@
                 Place your content here.
             -->
         </Grid>
-        <TextBlock Text="TEXT BLOCK READ ONLY" TextWrapping="Wrap" FontSize="32" Margin="55,238,776,475"/>
+        <TextBlock Name="MainTextBlock" Text="" TextWrapping="Wrap" FontSize="32" Margin="140,102,218,131"/>
     </Grid>
 </Page>

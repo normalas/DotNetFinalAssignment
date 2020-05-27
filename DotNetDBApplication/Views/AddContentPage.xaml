@@ -24,11 +24,11 @@
                 </StackPanel>
                 <StackPanel Name="block" Padding="0,15,0,0">
                     <TextBlock Style="{StaticResource DetailSubTitleStyle}" Text="Title" />
-                    <TextBox x:Name="titleBox" Text="{x:Bind  Mode=OneWay}"/>
+                    <TextBox x:Name="titleBox" Text=""/>
                     <!-- CHANGE -->
 
                     <TextBlock Style="{StaticResource DetailSubTitleStyle}" Text="Subtitle" />
-                    <TextBox x:Name="subtitleBox" Text="{x:Bind  Mode=OneWay}"/>
+                    <TextBox x:Name="subtitleBox" Text=""/>
                     <!-- CHANGE -->
 
 
@@ -36,7 +36,7 @@
                     Margin="{StaticResource SmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Developer" />
-                    <TextBox x:Name="developerBox" Text="{x:Bind  Mode=OneWay}" />
+                    <TextBox x:Name="developerBox" Text="" />
                     <!-- CHANGE -->
 
                     <TextBlock
@@ -50,29 +50,17 @@
                     Margin="{StaticResource SmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Estimated Time To Complete" />
-                    <TextBox x:Name="ttcBox" Text="{x:Bind  Mode=OneWay}" />
-                    <!-- CHANGE -->
-
+                    <TextBox x:Name="ttcBox" Text="" />
                     <TextBlock
-                    Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
+                    MinWidth="650"
                     Text="Character" />
-                    <TextBox x:Name="characterBox" Text="{x:Bind  Mode=OneWay}"/>
                     <!-- CHANGE -->
-
-                    <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
-                    Style="{StaticResource DetailSubTitleStyle}"
-                    MinWidth="650"
-                    Text="Note 2" />
-                    <TextBox
-                    Margin="{StaticResource MediumBottomMargin}"
-                    MinWidth="650"
-                    x:Name="actorBox" Text="{x:Bind  Mode=OneWay}"/>
+                    <TextBox x:Name="characterBox" Text=""/>
                     <!-- CHANGE -->
 
                 </StackPanel>
-                <Button Content="Confirm" x:Name="confirmButton" Click="confirmButton_Click"/>
+                <Button Margin="10" Content="Confirm" x:Name="confirmButton" Click="confirmButton_Click"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
