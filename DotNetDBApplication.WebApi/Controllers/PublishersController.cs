@@ -46,7 +46,7 @@ namespace DotNet.DBApplication.WebApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPublisher(int id, Publisher publisher)
         {
-            if (id != publisher.CompanyId)
+            if (id != publisher.PublisherId)
             {
                 return BadRequest();
             }
@@ -79,7 +79,7 @@ namespace DotNet.DBApplication.WebApi.Controllers
             _context.Publishers.Add(publisher);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPublisher", new { id = publisher.CompanyId }, publisher);
+            return CreatedAtAction("GetPublisher", new { id = publisher.PublisherId }, publisher);
         }
 
         // DELETE: api/Publishers/5
@@ -100,7 +100,7 @@ namespace DotNet.DBApplication.WebApi.Controllers
 
         private bool PublisherExists(int id)
         {
-            return _context.Publishers.Any(e => e.CompanyId == id);
+            return _context.Publishers.Any(e => e.PublisherId == id);
         }
     }
 }

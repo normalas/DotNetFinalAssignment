@@ -4,6 +4,7 @@ using DotNet.DBApplication.ViewModels;
 
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace DotNetDBApplication.Views
 {
@@ -20,6 +21,13 @@ namespace DotNetDBApplication.Views
         private async void MasterDetailPage_Loaded(object sender, RoutedEventArgs e)
         {
             await ViewModel.LoadDataAsync(MasterDetailsViewControl.ViewState);
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+
+            Frame.Navigate(typeof(ViewContentPage), ViewModel.Selected);
         }
     }
 }

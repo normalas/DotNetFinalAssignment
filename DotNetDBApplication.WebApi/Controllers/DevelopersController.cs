@@ -46,7 +46,7 @@ namespace DotNet.DBApplication.WebApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDeveloper(int id, Developer developer)
         {
-            if (id != developer.CompanyId)
+            if (id != developer.DeveloperId)
             {
                 return BadRequest();
             }
@@ -79,7 +79,7 @@ namespace DotNet.DBApplication.WebApi.Controllers
             _context.Developers.Add(developer);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDeveloper", new { id = developer.CompanyId }, developer);
+            return CreatedAtAction("GetDeveloper", new { id = developer.DeveloperId }, developer);
         }
 
         // DELETE: api/Developers/5
@@ -100,7 +100,7 @@ namespace DotNet.DBApplication.WebApi.Controllers
 
         private bool DeveloperExists(int id)
         {
-            return _context.Developers.Any(e => e.CompanyId == id);
+            return _context.Developers.Any(e => e.DeveloperId == id);
         }
     }
 }

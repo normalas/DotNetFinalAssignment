@@ -19,34 +19,17 @@ namespace DotNet.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DotNet.Models.Actor", b =>
-                {
-                    b.Property<int>("ActorId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ActorName");
-
-                    b.HasKey("ActorId");
-
-                    b.ToTable("Actors");
-                });
-
             modelBuilder.Entity("DotNet.Models.Character", b =>
                 {
                     b.Property<int>("CharacterId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ActorId");
-
                     b.Property<string>("CharacterName");
 
                     b.Property<int?>("GameId");
 
                     b.HasKey("CharacterId");
-
-                    b.HasIndex("ActorId");
 
                     b.HasIndex("GameId");
 
@@ -55,13 +38,13 @@ namespace DotNet.DataAccess.Migrations
 
             modelBuilder.Entity("DotNet.Models.Developer", b =>
                 {
-                    b.Property<int>("CompanyId")
+                    b.Property<int>("DeveloperId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("DeveloperId");
+                    b.Property<string>("DeveloperName");
 
-                    b.HasKey("CompanyId");
+                    b.HasKey("DeveloperId");
 
                     b.ToTable("Developers");
                 });
@@ -72,40 +55,28 @@ namespace DotNet.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BoxArtImage");
-
-                    b.Property<int?>("DeveloperId");
-
-                    b.Property<float>("EstimatedTtc");
-
                     b.Property<string>("GameSeries");
 
                     b.Property<string>("GameSubtitle");
 
                     b.Property<string>("GameTitle");
 
-                    b.Property<int?>("PublisherId");
-
-                    b.Property<DateTime>("ReleaseDate");
+                    b.Property<float>("HoursToComplete");
 
                     b.HasKey("GameId");
-
-                    b.HasIndex("DeveloperId");
-
-                    b.HasIndex("PublisherId");
 
                     b.ToTable("Games");
                 });
 
             modelBuilder.Entity("DotNet.Models.Publisher", b =>
                 {
-                    b.Property<int>("CompanyId")
+                    b.Property<int>("PublisherId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("PublisherId");
+                    b.Property<string>("PublisherName");
 
-                    b.HasKey("CompanyId");
+                    b.HasKey("PublisherId");
 
                     b.ToTable("Publishers");
                 });
@@ -120,13 +91,9 @@ namespace DotNet.DataAccess.Migrations
 
                     b.Property<int>("CharacterId");
 
-                    b.Property<int>("ActorId");
+                    b.HasKey("GameId", "PublisherId", "DeveloperId", "CharacterId");
 
-                    b.HasKey("GameId", "PublisherId", "DeveloperId", "CharacterId", "ActorId");
-
-                    b.HasAlternateKey("ActorId", "CharacterId", "DeveloperId", "GameId", "PublisherId");
-
-                    b.HasIndex("CharacterId");
+                    b.HasAlternateKey("CharacterId", "DeveloperId", "GameId", "PublisherId");
 
                     b.HasIndex("DeveloperId");
 
@@ -137,35 +104,15 @@ namespace DotNet.DataAccess.Migrations
 
             modelBuilder.Entity("DotNet.Models.Character", b =>
                 {
-                    b.HasOne("DotNet.Models.Actor", "Actor")
-                        .WithMany("Plays")
-                        .HasForeignKey("ActorId");
-
                     b.HasOne("DotNet.Models.Game")
-                        .WithMany("Cast")
+                        .WithMany("CharacterCast")
                         .HasForeignKey("GameId");
-                });
-
-            modelBuilder.Entity("DotNet.Models.Game", b =>
-                {
-                    b.HasOne("DotNet.Models.Developer", "Developer")
-                        .WithMany()
-                        .HasForeignKey("DeveloperId");
-
-                    b.HasOne("DotNet.Models.Publisher", "Publisher")
-                        .WithMany()
-                        .HasForeignKey("PublisherId");
                 });
 
             modelBuilder.Entity("DotNet.Models.VideoGame", b =>
                 {
-                    b.HasOne("DotNet.Models.Actor", "Actor")
-                        .WithMany()
-                        .HasForeignKey("ActorId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("DotNet.Models.Character", "Character")
-                        .WithMany("Appearances")
+                        .WithMany()
                         .HasForeignKey("CharacterId")
                         .OnDelete(DeleteBehavior.Cascade);
 

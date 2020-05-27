@@ -13,6 +13,7 @@ namespace DotNetDBApplication.Views
         public MainPage()
         {
             InitializeComponent();
+            MainTextBlock.Text = "Welcome to Oiran\nAn application to look up games in a database";
         }
     }
 }

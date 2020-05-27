@@ -23,33 +23,33 @@
             </StackPanel>
             <StackPanel Name="block" Padding="0,15,0,0">
                 <TextBlock Style="{StaticResource DetailSubTitleStyle}" Text="Title" />
-                <TextBox Text="{x:Bind Mode=OneWay}" />
+                <TextBox Name="titleBox" Text="" />
                 <!-- CHANGE -->
 
                 <TextBlock Style="{StaticResource DetailSubTitleStyle}" Text="Subtitle" />
-                <TextBox Text="{x:Bind  Mode=OneWay}" />
+                <TextBox Name="subtitleBox" Text="" />
                 <!-- CHANGE -->
-                
+
 
                 <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Developer" />
-                <TextBox Text="{x:Bind  Mode=OneWay}" />
+                <TextBox Name="developerBox" Text="" />
                 <!-- CHANGE -->
 
                 <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Publisher" />
-                <TextBox Text="{x:Bind  Mode=OneWay}" />
+                <TextBox Name="publisherBox" Text="" />
                 <!-- CHANGE -->
 
                 <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Estimated Time To Complete" />
-                <TextBox Text="{x:Bind  Mode=OneWay}" />
+                <TextBox Name="ttcBox" Text="" />
                 <!-- CHANGE -->
 
                 <TextBlock
@@ -67,10 +67,12 @@
                 <TextBox
                     Margin="{StaticResource MediumBottomMargin}"
                     MinWidth="650"
-                    Text=""/>
+                    Text="{x:Bind  Mode=OneWay}"/>
                 <!-- CHANGE -->
 
             </StackPanel>
+            <Button Margin="10" Content="Confirm Edit" Name="ConfirmButton" Click="ConfirmButton_Click"/>
+            <Button Margin="10" Content="Delete Entry" Name="DeleteButton" Click="DeleteButton_Click"/>
         </StackPanel>
     </ScrollViewer>
 </Page>
