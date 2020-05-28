@@ -51,13 +51,13 @@ namespace DotNetDBApplication.DataAccess
         internal async Task<bool> UpdateVideoGameAsync(VideoGame videoGame)
         {
             string json = JsonConvert.SerializeObject(videoGame);
-            HttpResponseMessage result = await _httpClient.PutAsync(new Uri(videoGamesBaseUri, "videoGame/" + videoGame.GameId.ToString()), new StringContent(json, Encoding.UTF8, "appliction/json"));
+            HttpResponseMessage result = await _httpClient.PutAsync(new Uri(videoGamesBaseUri, "videoGames/" + videoGame.GameId.ToString()), new StringContent(json, Encoding.UTF8, "application/json"));
 
             if (result.IsSuccessStatusCode)
             {
                 json = await result.Content.ReadAsStringAsync();
                 var returnedVideoGame = JsonConvert.DeserializeObject<VideoGame>(json);
-                videoGame.GameId = returnedVideoGame.GameId;
+                videoGame = returnedVideoGame;
 
                 return true;
             }
@@ -69,7 +69,7 @@ namespace DotNetDBApplication.DataAccess
 
         internal async Task<bool> DeleteVideoGameAsync(VideoGame videoGame)
         {
-            HttpResponseMessage result = await _httpClient.DeleteAsync(new Uri(videoGamesBaseUri, "videoGame/" + videoGame.GameId.ToString()));
+            HttpResponseMessage result = await _httpClient.DeleteAsync(new Uri(videoGamesBaseUri, "videoGames/" + videoGame.GameId.ToString()));
             return result.IsSuccessStatusCode;
         }
     }

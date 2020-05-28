@@ -23,5 +23,12 @@ namespace DotNetDBApplication.Views
             await ViewModel.LoadDataAsync(MasterDetailsViewControl.ViewState);
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var vg = ViewModel.Selected;
+
+            Frame.Navigate(typeof(ViewContentPage), vg);
+        }
+
     }
 }

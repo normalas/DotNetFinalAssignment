@@ -96,5 +96,6 @@
             NoSelectionContentTemplate="{StaticResource NoSelectionContentTemplate}"
             SelectedItem="{x:Bind ViewModel.Selected, Mode=TwoWay}" >
         </controls:MasterDetailsView>
+        <Button Content="Edit/delete" HorizontalAlignment="Center" Margin="0,729,0,0" VerticalAlignment="Top" Click="Button_Click"/>
     </Grid>
 </Page>

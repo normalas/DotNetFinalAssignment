@@ -12,6 +12,7 @@ namespace DotNetDBApplication.Views
     {
         public ViewContentViewModel ViewModel { get; } = new ViewContentViewModel();
         public VideoGames videoGameDataAccess = new VideoGames();
+        public VideoGame videoGame;
 
         public ViewContentPage()
         {
@@ -20,19 +21,17 @@ namespace DotNetDBApplication.Views
 
         private async void ConfirmButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            await videoGameDataAccess.UpdateVideoGameAsync(new VideoGame() //må få inn objektet fra der den kommer fra
-            {
-                    GameTitle = titleBox.Text,
-                    GameSubtitle = subtitleBox.Text,              
-                    DeveloperName = developerBox.Text,
-                    PublisherName = publisherBox.Text
-                
-            });
+            videoGame.GameTitle = titleBox.Text;
+            videoGame.GameSubtitle = subtitleBox.Text;
+            videoGame.DeveloperName = developerBox.Text;
+            videoGame.PublisherName = publisherBox.Text;
+
+            await videoGameDataAccess.UpdateVideoGameAsync(videoGame);
         }
 
-        private void DeleteButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private async void DeleteButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            
+            await videoGameDataAccess.DeleteVideoGameAsync(videoGame);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -45,11 +44,13 @@ namespace DotNetDBApplication.Views
                 titleBox.Text = "Nothing selected";
             }
             else
-            { 
-                titleBox.Text = vg.GameTitle;
-                subtitleBox.Text = vg.GameSubtitle;
-                developerBox.Text = vg.DeveloperName;
-                publisherBox.Text = vg.PublisherName;
+            {
+                videoGame = vg;
+
+                titleBox.Text = vg.GameTitle != null ? vg.GameTitle : "";
+                subtitleBox.Text = vg.GameSubtitle != null ? vg.GameSubtitle : "";
+                developerBox.Text = vg.DeveloperName != null ? vg.DeveloperName : "";
+                publisherBox.Text = vg.PublisherName != null ? vg.PublisherName : "";
             }
             
         }
