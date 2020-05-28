@@ -23,11 +23,12 @@ namespace DotNetDBApplication.Views
             await ViewModel.LoadDataAsync(MasterDetailsViewControl.ViewState);
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            base.OnNavigatedFrom(e);
+            var vg = ViewModel.Selected;
 
-            Frame.Navigate(typeof(ViewContentPage), ViewModel.Selected);
+            Frame.Navigate(typeof(ViewContentPage), vg);
         }
+
     }
 }

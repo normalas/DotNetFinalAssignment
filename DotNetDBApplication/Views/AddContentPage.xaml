@@ -45,12 +45,6 @@
                     Text="Publisher" />
                     <TextBox x:Name="publisherBox" />
                     <!-- CHANGE -->
-
-                    <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
-                    Style="{StaticResource DetailSubTitleStyle}"
-                    Text="Estimated Time To Complete" />
-                    <TextBox x:Name="ttcBox" Text="" />
                     <TextBlock
                     Style="{StaticResource DetailSubTitleStyle}"
                     MinWidth="650"

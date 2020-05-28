@@ -42,12 +42,12 @@ namespace DotNet.DBApplication.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
+            //else
+            //{
+            //    app.UseHsts();
+            //}
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseMvc();
 
             //app.UseSwagger();

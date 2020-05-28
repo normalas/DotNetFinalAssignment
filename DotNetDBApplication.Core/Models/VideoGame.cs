@@ -8,18 +8,15 @@ namespace DotNet.Models
     {
         [Key]
         public int GameId { get; set; }
-        public Game Game { get; set; }
+        public string GameTitle { get; set; }
+        public string GameSubtitle { get; set; }
+        public string DeveloperName { get; set; }
+        public string PublisherName { get; set; }
+        public string CharacterName { get; set; }
 
-        [Key]
-        public int DeveloperId { get; set; }
-        public Developer Developer { get; set; }
-
-        [Key]
-        public int PublisherId { get; set; }
-        public Publisher Publisher { get; set; }
-
-        [Key]
-        public int CharacterId { get; set; }
-        public Character Character { get; set; }
+        public override string ToString()
+        {
+            return $"ID {GameId}:\n{GameTitle}: {GameSubtitle}";
+        }
     }
 }

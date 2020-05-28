@@ -9,11 +9,7 @@ namespace DotNet.DataAccess
     {
         public DotNetContext(DbContextOptions<DotNetContext> options) : base(options) { }
 
-        public DbSet<Character> Characters { get; set; }
         public DbSet<VideoGame> VideoGames { get; set; }
-        public DbSet<Game> Games { get; set; }
-        public DbSet<Developer> Developers { get; set; }
-        public DbSet<Publisher> Publishers { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -34,16 +30,8 @@ namespace DotNet.DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<VideoGame>()
-                .HasKey(game => new { game.GameId, game.PublisherId, game.DeveloperId, game.CharacterId});
+                .HasKey(game => new { game.GameId});
 
-            modelBuilder.Entity<VideoGame>()
-                .HasOne(vg => vg.Developer)
-                .WithMany(game => game.DevelopedGames)
-                .HasForeignKey(dev => dev.DeveloperId);
-            modelBuilder.Entity<VideoGame>()
-                .HasOne(pub => pub.Publisher)
-                .WithMany(game => game.PublishedGames)
-                .HasForeignKey(pub => pub.PublisherId);
         }
     }
 }

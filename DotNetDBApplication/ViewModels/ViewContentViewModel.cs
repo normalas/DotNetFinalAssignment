@@ -1,6 +1,7 @@
 ﻿using System;
-
+using DotNet.Models;
 using DotNetDBApplication.Helpers;
+using DotNetDBApplication.Views;
 
 namespace DotNet.DBApplication.ViewModels
 {

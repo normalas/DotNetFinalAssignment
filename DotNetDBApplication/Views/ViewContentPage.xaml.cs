@@ -12,6 +12,7 @@ namespace DotNetDBApplication.Views
     {
         public ViewContentViewModel ViewModel { get; } = new ViewContentViewModel();
         public VideoGames videoGameDataAccess = new VideoGames();
+        public VideoGame videoGame;
 
         public ViewContentPage()
         {
@@ -20,28 +21,17 @@ namespace DotNetDBApplication.Views
 
         private async void ConfirmButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            await videoGameDataAccess.UpdateVideoGameAsync(new VideoGame() //må få inn objektet fra der den kommer fra
-            {
-                Game = new Game()
-                {
-                    GameTitle = titleBox.Text,
-                    GameSubtitle = subtitleBox.Text,
-                    HoursToComplete = float.TryParse(ttcBox.Text, out float n) ? n : 0f
-                },
-                Developer = new Developer()
-                {
-                    DeveloperName = developerBox.Text
-                },
-                Publisher = new Publisher()
-                {
-                    PublisherName = publisherBox.Text
-                }
-            });
+            videoGame.GameTitle = titleBox.Text;
+            videoGame.GameSubtitle = subtitleBox.Text;
+            videoGame.DeveloperName = developerBox.Text;
+            videoGame.PublisherName = publisherBox.Text;
+
+            await videoGameDataAccess.UpdateVideoGameAsync(videoGame);
         }
 
-        private void DeleteButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private async void DeleteButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            
+            await videoGameDataAccess.DeleteVideoGameAsync(videoGame);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -49,12 +39,19 @@ namespace DotNetDBApplication.Views
             base.OnNavigatedTo(e);
 
             var vg = (VideoGame)e.Parameter;
+            if (vg == null)
+            {
+                titleBox.Text = "Nothing selected";
+            }
+            else
+            {
+                videoGame = vg;
 
-            titleBox.Text = vg.Game.GameTitle;
-            subtitleBox.Text = vg.Game.GameSubtitle;
-            developerBox.Text = vg.Developer.DeveloperName;
-            publisherBox.Text = vg.Publisher.PublisherName;
-            ttcBox.Text = vg.Game.HoursToComplete.ToString();
+                titleBox.Text = vg.GameTitle != null ? vg.GameTitle : "";
+                subtitleBox.Text = vg.GameSubtitle != null ? vg.GameSubtitle : "";
+                developerBox.Text = vg.DeveloperName != null ? vg.DeveloperName : "";
+                publisherBox.Text = vg.PublisherName != null ? vg.PublisherName : "";
+            }
             
         }
     }
