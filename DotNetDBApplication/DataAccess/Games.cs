@@ -43,7 +43,7 @@ namespace DotNetDBApplication.DataAccess
         internal async Task<bool> UpdateGameAsync(Game game)
         {
             string json = JsonConvert.SerializeObject(game);
-            HttpResponseMessage result = await _httpClient.PutAsync(gamesBaseUri, new StringContent(json, Encoding.UTF8, "appliction/json"));
+            HttpResponseMessage result = await _httpClient.PutAsync(new Uri(gamesBaseUri, "game/" + game.GameId.ToString()), new StringContent(json, Encoding.UTF8, "appliction/json"));
 
             if (result.IsSuccessStatusCode)
             {

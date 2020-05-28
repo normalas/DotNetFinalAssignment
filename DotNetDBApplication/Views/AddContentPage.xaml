@@ -49,8 +49,8 @@
                     <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
-                    Text="Estimated Time To Complete" />
-                    <TextBox x:Name="ttcBox" Text="" />
+                    Text="Game Series" />
+                    <TextBox x:Name="seriesBox" Text="" />
                     <TextBlock
                     Style="{StaticResource DetailSubTitleStyle}"
                     MinWidth="650"

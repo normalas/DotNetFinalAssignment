@@ -43,7 +43,7 @@ namespace DotNetDBApplication.DataAccess
         internal async Task<bool> UpdatePublisherAsync(Publisher publisher)
         {
             string json = JsonConvert.SerializeObject(publisher);
-            HttpResponseMessage result = await _httpClient.PutAsync(publishersBaseUri, new StringContent(json, Encoding.UTF8, "appliction/json"));
+            HttpResponseMessage result = await _httpClient.PutAsync(new Uri(publishersBaseUri, "publisher/" + publisher.PublisherId.ToString()), new StringContent(json, Encoding.UTF8, "appliction/json"));
 
             if (result.IsSuccessStatusCode)
             {

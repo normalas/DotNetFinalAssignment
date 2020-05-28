@@ -43,7 +43,7 @@ namespace DotNetDBApplication.DataAccess
         internal async Task<bool> UpdateDeveloperAsync(Developer developer)
         {
             string json = JsonConvert.SerializeObject(developer);
-            HttpResponseMessage result = await _httpClient.PutAsync(developersBaseUri, new StringContent(json, Encoding.UTF8, "appliction/json"));
+            HttpResponseMessage result = await _httpClient.PutAsync(new Uri(developersBaseUri, "developer/" + developer.DeveloperId.ToString()), new StringContent(json, Encoding.UTF8, "appliction/json"));
 
             if (result.IsSuccessStatusCode)
             {

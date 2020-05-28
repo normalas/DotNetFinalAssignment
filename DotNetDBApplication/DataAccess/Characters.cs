@@ -43,7 +43,7 @@ namespace DotNetDBApplication.DataAccess
         internal async Task<bool> UpdateCharacterAsync(Character character)
         {
             string json = JsonConvert.SerializeObject(character);
-            HttpResponseMessage result = await _httpClient.PutAsync(charactersBaseUri, new StringContent(json, Encoding.UTF8, "appliction/json"));
+            HttpResponseMessage result = await _httpClient.PutAsync(new Uri(charactersBaseUri, "character/" + character.CharacterId.ToString()), new StringContent(json, Encoding.UTF8, "appliction/json"));
 
             if (result.IsSuccessStatusCode)
             {

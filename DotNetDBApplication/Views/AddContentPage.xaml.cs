@@ -22,6 +22,7 @@ namespace DotNetDBApplication.Views
             {
                 GameTitle = titleBox.Text,
                 GameSubtitle = subtitleBox.Text,
+                GameSeries = seriesBox.Text
             },
             Developer = new Developer()
             {
