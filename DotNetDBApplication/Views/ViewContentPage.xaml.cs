@@ -3,6 +3,7 @@
 using DotNet.DBApplication.ViewModels;
 using DotNet.Models;
 using DotNetDBApplication.DataAccess;
+using Microsoft.Graphics.Canvas.Text;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -32,6 +33,7 @@ namespace DotNetDBApplication.Views
         private async void DeleteButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             await videoGameDataAccess.DeleteVideoGameAsync(videoGame);
+            Frame.Navigate(typeof(MasterDetailPage));
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
