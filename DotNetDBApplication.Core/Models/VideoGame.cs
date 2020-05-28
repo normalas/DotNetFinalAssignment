@@ -14,6 +14,9 @@ namespace DotNet.Models
         public string PublisherName { get; set; }
         public string CharacterName { get; set; }
 
-
+        public override string ToString()
+        {
+            return $"ID {GameId}:\n{GameTitle}: {GameSubtitle}";
+        }
     }
 }
