@@ -22,25 +22,25 @@
             </StackPanel>
             <StackPanel Name="block" Padding="0,15,0,0">
                 <TextBlock Style="{StaticResource DetailSubTitleStyle}" Text="Title" />
-                <TextBlock x:Name="titleBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.Game.GameId, Mode=OneWay}" />
+                <TextBlock x:Name="titleBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.GameTitle, Mode=OneWay}" />
                 <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Subtitle" />
-                <TextBlock x:Name="subtitleBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.Game.GameSubtitle, Mode=OneWay}" />
+                <TextBlock x:Name="subtitleBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.GameSubtitle, Mode=OneWay}" />
                 <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Developer" />
-                <TextBlock x:Name="developerBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.Developer.DeveloperName, Mode=OneWay}" />
+                <TextBlock x:Name="developerBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.DeveloperName, Mode=OneWay}" />
                 <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Publisher" />
-                <TextBlock x:Name="publisherBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.Publisher.PublisherName, Mode=OneWay}" />
+                <TextBlock x:Name="publisherBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.PublisherName, Mode=OneWay}" />
                 
 
-                <TextBlock
+                <!--<TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Note 1" />
@@ -53,7 +53,7 @@
                 <TextBlock
                     Margin="{StaticResource MediumBottomMargin}"
                     Style="{StaticResource DetailBodyStyle}"
-                    Text="" />
+                    Text="" />-->
             </StackPanel>
         </StackPanel>
     </ScrollViewer>

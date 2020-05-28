@@ -27,8 +27,8 @@
                     Grid.Column="1"
                     Margin="{StaticResource SmallLeftMargin}"
                     VerticalAlignment="Center">
-                    <TextBlock Style="{ThemeResource ListTitleStyle}" Text="{x:Bind Game}" />
-                    <TextBlock Style="{StaticResource ListSubTitleStyle}" Text="{x:Bind Game.GameSubtitle}" />
+                    <TextBlock Style="{ThemeResource ListTitleStyle}" Text="{x:Bind GameTitle}" />
+                    <TextBlock Style="{StaticResource ListSubTitleStyle}" Text="{x:Bind GameSubtitle}" />
                 </StackPanel>
             </Grid>
         </DataTemplate>
@@ -73,18 +73,18 @@
 
     <Grid x:Name="ContentArea">
         <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup>
-                    <VisualState>
-                        <VisualState.StateTriggers>
-                            <!--641 is the default CompactModeThresholdWidth in NavigationView -->
-                            <AdaptiveTrigger MinWindowWidth="641" />
-                        </VisualState.StateTriggers>
-                        <VisualState.Setters>
-                            <Setter Target="MasterDetailsViewControl.MasterHeaderTemplate" Value="{StaticResource MasterHeaderTemplate}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!--641 is the default CompactModeThresholdWidth in NavigationView -->
+                        <AdaptiveTrigger MinWindowWidth="641" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MasterDetailsViewControl.MasterHeaderTemplate" Value="{StaticResource MasterHeaderTemplate}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <controls:MasterDetailsView
             x:Name="MasterDetailsViewControl"
             x:Uid="MasterDetail"
@@ -92,10 +92,9 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
             BorderBrush="Transparent"
             DetailsTemplate="{StaticResource DetailsTemplate}"
-            ItemsSource="{x:Bind ViewModel.VideoGames}"
-            ItemTemplate="{StaticResource ItemTemplate}"
             MasterHeaderTemplate="{StaticResource MinimalMasterHeaderTemplate}"
             NoSelectionContentTemplate="{StaticResource NoSelectionContentTemplate}"
-            SelectedItem="{x:Bind ViewModel.Selected, Mode=TwoWay}" />
+            SelectedItem="{x:Bind ViewModel.Selected, Mode=TwoWay}" >
+        </controls:MasterDetailsView>
     </Grid>
 </Page>

@@ -45,12 +45,12 @@
                 <TextBox Name="publisherBox" Text="" />
                 <!-- CHANGE -->
 
-                <TextBlock
+                <!--<TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Note 1" />
                 <TextBox Text="" />
-                <!-- CHANGE -->
+                --><!-- CHANGE --><!--
 
                 <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
@@ -60,7 +60,7 @@
                 <TextBox
                     Margin="{StaticResource MediumBottomMargin}"
                     MinWidth="650"
-                    Text="{x:Bind  Mode=OneWay}"/>
+                    Text="{x:Bind  Mode=OneWay}"/>-->
                 <!-- CHANGE -->
 
             </StackPanel>

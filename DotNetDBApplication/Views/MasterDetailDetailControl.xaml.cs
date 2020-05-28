@@ -27,5 +27,6 @@ namespace DotNetDBApplication.Views
             var control = d as MasterDetailDetailControl;
             control.ForegroundElement.ChangeView(0, 0, 1);
         }
+
     }
 }

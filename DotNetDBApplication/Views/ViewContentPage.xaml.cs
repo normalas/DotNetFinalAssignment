@@ -22,19 +22,11 @@ namespace DotNetDBApplication.Views
         {
             await videoGameDataAccess.UpdateVideoGameAsync(new VideoGame() //må få inn objektet fra der den kommer fra
             {
-                Game = new Game()
-                {
                     GameTitle = titleBox.Text,
-                    GameSubtitle = subtitleBox.Text,
-                },
-                Developer = new Developer()
-                {
-                    DeveloperName = developerBox.Text
-                },
-                Publisher = new Publisher()
-                {
+                    GameSubtitle = subtitleBox.Text,              
+                    DeveloperName = developerBox.Text,
                     PublisherName = publisherBox.Text
-                }
+                
             });
         }
 
@@ -54,10 +46,10 @@ namespace DotNetDBApplication.Views
             }
             else
             { 
-                titleBox.Text = vg.Game.GameTitle;
-                subtitleBox.Text = vg.Game.GameSubtitle;
-                developerBox.Text = vg.Developer.DeveloperName;
-                publisherBox.Text = vg.Publisher.PublisherName;
+                titleBox.Text = vg.GameTitle;
+                subtitleBox.Text = vg.GameSubtitle;
+                developerBox.Text = vg.DeveloperName;
+                publisherBox.Text = vg.PublisherName;
             }
             
         }

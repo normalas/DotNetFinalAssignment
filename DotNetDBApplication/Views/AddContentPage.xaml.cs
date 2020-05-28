@@ -18,24 +18,12 @@ namespace DotNetDBApplication.Views
         private VideoGames videoGameDataAccess = new VideoGames();
         private async Task AddVideoGameAsync() => await videoGameDataAccess.AddVideoGameAsync(new VideoGame()
         {
-            Game = new Game()
-            {
                 GameTitle = titleBox.Text,
-                GameSubtitle = subtitleBox.Text,
-                GameSeries = seriesBox.Text
-            },
-            Developer = new Developer()
-            {
-                DeveloperName = developerBox.Text
-            },
-            Publisher = new Publisher()
-            {
-                PublisherName = publisherBox.Text
-            },
-            Character = new Character()
-            {
+                GameSubtitle = subtitleBox.Text,          
+                DeveloperName = developerBox.Text,           
+                PublisherName = publisherBox.Text,           
                 CharacterName = characterBox.Text
-            }
+            
         });
         private async void confirmButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {

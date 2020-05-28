@@ -23,11 +23,5 @@ namespace DotNetDBApplication.Views
             await ViewModel.LoadDataAsync(MasterDetailsViewControl.ViewState);
         }
 
-        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
-        {
-            base.OnNavigatingFrom(e);
-            Frame.Navigate(typeof(ViewContentPage), ViewModel.Selected);
-        }
-
     }
 }

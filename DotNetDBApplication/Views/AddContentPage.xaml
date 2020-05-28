@@ -45,12 +45,6 @@
                     Text="Publisher" />
                     <TextBox x:Name="publisherBox" />
                     <!-- CHANGE -->
-
-                    <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
-                    Style="{StaticResource DetailSubTitleStyle}"
-                    Text="Game Series" />
-                    <TextBox x:Name="seriesBox" Text="" />
                     <TextBlock
                     Style="{StaticResource DetailSubTitleStyle}"
                     MinWidth="650"
