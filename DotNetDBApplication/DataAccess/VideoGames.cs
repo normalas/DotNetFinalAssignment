@@ -20,6 +20,14 @@ namespace DotNetDBApplication.DataAccess
 
             return videoGames;
         }
+        public async Task<VideoGame> GetVideoGameAsync()
+        {
+            HttpResponseMessage result = await _httpClient.GetAsync(videoGamesBaseUri);
+            string json = await result.Content.ReadAsStringAsync();
+            VideoGame videoGame = JsonConvert.DeserializeObject<VideoGame>(json);
+
+            return videoGame;
+        }
 
         internal async Task<bool> AddVideoGameAsync(VideoGame videoGame)
         {

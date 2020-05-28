@@ -3,14 +3,16 @@ using DotNet.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DotNet.DataAccess.Migrations
 {
     [DbContext(typeof(DotNetContext))]
-    partial class DotNetContextModelSnapshot : ModelSnapshot
+    [Migration("20200527230414_AnotherModelUpdate")]
+    partial class AnotherModelUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,6 +58,8 @@ namespace DotNet.DataAccess.Migrations
 
                     b.Property<string>("GameTitle");
 
+                    b.Property<float>("HoursToComplete");
+
                     b.HasKey("GameId");
 
                     b.ToTable("Games");
@@ -88,17 +92,9 @@ namespace DotNet.DataAccess.Migrations
 
                     b.HasAlternateKey("CharacterId", "DeveloperId", "GameId", "PublisherId");
 
-                    b.HasIndex("CharacterId")
-                        .IsUnique();
+                    b.HasIndex("DeveloperId");
 
-                    b.HasIndex("DeveloperId")
-                        .IsUnique();
-
-                    b.HasIndex("GameId")
-                        .IsUnique();
-
-                    b.HasIndex("PublisherId")
-                        .IsUnique();
+                    b.HasIndex("PublisherId");
 
                     b.ToTable("VideoGames");
                 });
@@ -106,23 +102,23 @@ namespace DotNet.DataAccess.Migrations
             modelBuilder.Entity("DotNet.Models.VideoGame", b =>
                 {
                     b.HasOne("DotNet.Models.Character", "Character")
-                        .WithOne("PartOf")
-                        .HasForeignKey("DotNet.Models.VideoGame", "CharacterId")
+                        .WithMany()
+                        .HasForeignKey("CharacterId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DotNet.Models.Developer", "Developer")
-                        .WithOne("DeveloperOf")
-                        .HasForeignKey("DotNet.Models.VideoGame", "DeveloperId")
+                        .WithMany()
+                        .HasForeignKey("DeveloperId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DotNet.Models.Game", "Game")
-                        .WithOne("PartOf")
-                        .HasForeignKey("DotNet.Models.VideoGame", "GameId")
+                        .WithMany()
+                        .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DotNet.Models.Publisher", "Publisher")
-                        .WithOne("PublisherOf")
-                        .HasForeignKey("DotNet.Models.VideoGame", "PublisherId")
+                        .WithMany()
+                        .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

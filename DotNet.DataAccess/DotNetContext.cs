@@ -34,16 +34,20 @@ namespace DotNet.DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<VideoGame>()
-                .HasKey(game => new { game.GameId, game.PublisherId, game.DeveloperId, game.CharacterId});
-
+                .HasKey(game => new { game.GameId, game.PublisherId, game.DeveloperId, game.CharacterId });
+            modelBuilder.Entity<VideoGame>()
+                .HasOne(vg => vg.Game)
+                .WithOne(g => g.PartOf);
             modelBuilder.Entity<VideoGame>()
                 .HasOne(vg => vg.Developer)
-                .WithMany(game => game.DevelopedGames)
-                .HasForeignKey(dev => dev.DeveloperId);
+                .WithOne(dev => dev.DeveloperOf);
             modelBuilder.Entity<VideoGame>()
-                .HasOne(pub => pub.Publisher)
-                .WithMany(game => game.PublishedGames)
-                .HasForeignKey(pub => pub.PublisherId);
+                .HasOne(vg => vg.Publisher)
+                .WithOne(pub => pub.PublisherOf);
+            modelBuilder.Entity<VideoGame>()
+                .HasOne(vg => vg.Character)
+                .WithOne(ch => ch.PartOf);
+
         }
     }
 }

@@ -3,14 +3,16 @@ using DotNet.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DotNet.DataAccess.Migrations
 {
     [DbContext(typeof(DotNetContext))]
-    partial class DotNetContextModelSnapshot : ModelSnapshot
+    [Migration("20200528001223_YetAnotherModelUpdate")]
+    partial class YetAnotherModelUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,6 +57,8 @@ namespace DotNet.DataAccess.Migrations
                     b.Property<string>("GameSubtitle");
 
                     b.Property<string>("GameTitle");
+
+                    b.Property<float>("HoursToComplete");
 
                     b.HasKey("GameId");
 

@@ -26,7 +26,6 @@ namespace DotNetDBApplication.Views
                 {
                     GameTitle = titleBox.Text,
                     GameSubtitle = subtitleBox.Text,
-                    HoursToComplete = float.TryParse(ttcBox.Text, out float n) ? n : 0f
                 },
                 Developer = new Developer()
                 {
@@ -49,12 +48,17 @@ namespace DotNetDBApplication.Views
             base.OnNavigatedTo(e);
 
             var vg = (VideoGame)e.Parameter;
-
-            titleBox.Text = vg.Game.GameTitle;
-            subtitleBox.Text = vg.Game.GameSubtitle;
-            developerBox.Text = vg.Developer.DeveloperName;
-            publisherBox.Text = vg.Publisher.PublisherName;
-            ttcBox.Text = vg.Game.HoursToComplete.ToString();
+            if (vg == null)
+            {
+                titleBox.Text = "Nothing selected";
+            }
+            else
+            { 
+                titleBox.Text = vg.Game.GameTitle;
+                subtitleBox.Text = vg.Game.GameSubtitle;
+                developerBox.Text = vg.Developer.DeveloperName;
+                publisherBox.Text = vg.Publisher.PublisherName;
+            }
             
         }
     }

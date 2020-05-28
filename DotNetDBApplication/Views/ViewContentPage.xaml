@@ -46,13 +46,6 @@
                 <!-- CHANGE -->
 
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
-                    Style="{StaticResource DetailSubTitleStyle}"
-                    Text="Estimated Time To Complete" />
-                <TextBox Name="ttcBox" Text="" />
-                <!-- CHANGE -->
-
-                <TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Note 1" />

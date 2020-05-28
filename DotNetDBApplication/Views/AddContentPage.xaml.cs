@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using DotNet.DBApplication.ViewModels;
 using DotNet.Models;
 using DotNetDBApplication.DataAccess;
+using Microsoft.Toolkit.Uwp.UI.Controls.TextToolbarSymbols;
 using Windows.UI.Xaml.Controls;
 
 namespace DotNetDBApplication.Views
@@ -21,7 +22,6 @@ namespace DotNetDBApplication.Views
             {
                 GameTitle = titleBox.Text,
                 GameSubtitle = subtitleBox.Text,
-                HoursToComplete = Int32.TryParse(ttcBox.Text, out int n) ? n : 0
             },
             Developer = new Developer()
             {
@@ -39,6 +39,7 @@ namespace DotNetDBApplication.Views
         private async void confirmButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             await AddVideoGameAsync();
+            
         }
     }
 }

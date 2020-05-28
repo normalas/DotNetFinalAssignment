@@ -11,6 +11,11 @@ namespace DotNet.Models
         }
         public int DeveloperId { get; set; }
         public string DeveloperName { get; set; }
-        public ICollection<VideoGame> DevelopedGames { get; private set; } = new List<VideoGame>();
+        public VideoGame DeveloperOf { get; set; }
+
+        public override string ToString()
+        {
+            return DeveloperName;
+        }
     }
 }

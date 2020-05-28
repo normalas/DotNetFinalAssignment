@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace DotNet.Models
 {
@@ -22,10 +19,9 @@ namespace DotNet.Models
 
         public string GameSeries { get; set; }
 
-        public ICollection<Character> CharacterCast { get; } = new List<Character>();
-
         //Estimated hours to completion, aka how long it is estimated to complete a full, regular playthrough in hours
-        public float HoursToComplete { get; set; }
+
+        public VideoGame PartOf { get; set; }
 
         public override string ToString()
         {

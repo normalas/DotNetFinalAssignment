@@ -22,7 +22,7 @@
             </StackPanel>
             <StackPanel Name="block" Padding="0,15,0,0">
                 <TextBlock Style="{StaticResource DetailSubTitleStyle}" Text="Title" />
-                <TextBlock x:Name="titleBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.Game.GameTitle, Mode=OneWay}" />
+                <TextBlock x:Name="titleBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.Game.GameId, Mode=OneWay}" />
                 <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
@@ -38,11 +38,7 @@
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Publisher" />
                 <TextBlock x:Name="publisherBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.Publisher.PublisherName, Mode=OneWay}" />
-                <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
-                    Style="{StaticResource DetailSubTitleStyle}"
-                    Text="Time to complete" />
-                <TextBlock x:Name="ttcBlock" Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind VideoGameItem.Game.HoursToComplete, Mode=OneWay}" />
+                
 
                 <TextBlock
                     Margin="{StaticResource MediumTopMargin}"

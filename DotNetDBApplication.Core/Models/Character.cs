@@ -8,10 +8,12 @@ namespace DotNet.Models
         [Key]
         public int CharacterId { get; set; }
         public string CharacterName { get; set; }
+        public VideoGame PartOf { get; set; }
+
 
         public override string ToString()
         {
-            return $"{CharacterName}";
+            return CharacterName;
         }
     }
 }

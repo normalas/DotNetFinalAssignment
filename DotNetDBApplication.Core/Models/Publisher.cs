@@ -12,6 +12,11 @@ namespace DotNet.Models
 
         public int PublisherId { get; set; }
         public string PublisherName { get; set; }
-        public ICollection<VideoGame> PublishedGames { get; } = new List<VideoGame>();
+        public VideoGame PublisherOf { get; set; }
+
+        public override string ToString()
+        {
+            return PublisherName;
+        }
     }
 }
